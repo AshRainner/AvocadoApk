@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/home"
+        android:title="ホーム" />
+    <item
+        android:id="@+id/tab_search"
+        android:icon="@drawable/search"
+        android:title="検索" />
+    <item
+        android:id="@+id/tab_upload"
+        android:icon="@drawable/upload"
+        android:title="出品" />
+    <item
+        android:id="@+id/tab_chat"
+        android:icon="@drawable/chat"
+        android:title="DM" />
+    <item
+        android:id="@+id/tab_mypage"
+        android:icon="@drawable/mypage"
+        android:title="MY" />
+</menu>
