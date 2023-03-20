@@ -14,11 +14,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class RecommendAdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
     private ArrayList<ProductModel> items = new ArrayList<>();
     Context context;
 
-    public RecommendAdapter(Context context,ArrayList<ProductModel> items) {
+    public ProductAdapter(Context context, ArrayList<ProductModel> items) {
         this.items = items;
         this.context = context;
     }

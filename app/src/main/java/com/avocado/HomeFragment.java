@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.Adapter.BannerPagerAdapter;
-import com.Adapter.RecommendAdapter;
+import com.Adapter.ProductAdapter;
 import com.Model.BannerModel;
 import com.Model.ProductModel;
 
@@ -30,9 +30,14 @@ public class HomeFragment extends Fragment {
     private RecyclerView categoryView;
     private TextView recommendText;
     private GridView recommendGrid;
-    private ArrayList<ProductModel> productList;
-    private RecommendAdapter recommendAdapter;
+    private ArrayList<ProductModel> recommendProductList;
+    private ProductAdapter recommendAdapter;
     private Button recommendButton;
+    private TextView friendText;
+    private GridView friendGrid;
+    private ArrayList<ProductModel> friendProductList;
+    private ProductAdapter friendAdapter;
+    private Button friendButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,15 +58,15 @@ public class HomeFragment extends Fragment {
         recommendGrid = view.findViewById(R.id.recommendView);
         recommendButton = view.findViewById(R.id.recommendButton);
 
-        productList = new ArrayList<ProductModel>();
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000000","도쿄부시나가와구"));
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000001","도쿄부시나가와"));
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
-        productList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        recommendProductList = new ArrayList<ProductModel>();
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000000","도쿄부시나가와구"));
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000001","도쿄부시나가와"));
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        recommendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
 
-        recommendAdapter = new RecommendAdapter(getActivity().getApplicationContext(),productList);
+        recommendAdapter = new ProductAdapter(getActivity().getApplicationContext(),recommendProductList);
         recommendGrid.setAdapter(recommendAdapter);
 
         recommendGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -70,6 +75,29 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+        friendText = view.findViewById(R.id.friendText);
+        friendGrid = view.findViewById(R.id.friendView);
+        friendButton = view.findViewById(R.id.friendButton);
+
+        friendProductList = new ArrayList<ProductModel>();
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000000","도쿄부시나가와구"));
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000001","도쿄부시나가와"));
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+        friendProductList.add(new ProductModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA","Panasonic","\\3000002","도쿄부시나가와"));
+
+        friendAdapter = new ProductAdapter(getActivity().getApplicationContext(),friendProductList);
+        friendGrid.setAdapter(friendAdapter);
+
+        friendGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
         bannerPager.setAdapter(bannerAdapter);
         bannerIndicator.setViewPager(bannerPager);
 
