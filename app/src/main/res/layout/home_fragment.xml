@@ -1,10 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<WebView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/home_web"></WebView>
+    android:layout_height="wrap_content">
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/bannerPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    </androidx.viewpager2.widget.ViewPager2>
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/bannerIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        app:ci_drawable="@drawable/black_radius"
+        app:ci_height="7dp"
+        app:ci_width="7dp"
+        app:ci_margin="5dp">
+    </me.relex.circleindicator.CircleIndicator3>
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryList"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+    </androidx.recyclerview.widget.RecyclerView>-->
+    <TextView
+        android:id="@+id/recommendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="東京23区の\nオススメ商品">
+    </TextView>
+    <GridView
+        android:id="@+id/recommendView"
+        android:layout_width="wrap_content"
+        android:layout_height="380dp"
+        android:numColumns="3"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp">
+    </GridView>
+    <Button
+        android:id="@+id/recommendButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="More">
+    </Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="More">
+    </Button>
 </LinearLayout>
+</ScrollView>

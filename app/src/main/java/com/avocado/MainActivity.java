@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     제작자 : 인하공업 전문 대학 3학년 이건
      */
     private ViewPager2 viewPager;
-    private MainFragment homeFragment;
+    private HomeFragment homeFragment;
     private SearchFragment searchFragment;
     private MainFragment upLoadFragment;
     private MainFragment chatFragment;
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         //Log.d("asdf",String.valueOf(pagerAdapter.getItemCount()));
     }
     private void createFragement(){
-        homeFragment = new MainFragment("http://192.168.35.9:3000/");
+        homeFragment = new HomeFragment();
         searchFragment = new SearchFragment("http://192.168.35.9:3000/search");
         upLoadFragment = new MainFragment("http://192.168.35.9:3000/upload");
         chatFragment = new MainFragment("http://192.168.35.9:3000/chat");
