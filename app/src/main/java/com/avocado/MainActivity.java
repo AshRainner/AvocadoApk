@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void createFragement(){
         homeFragment = new HomeFragment();
-        searchFragment = new SearchFragment("http://192.168.35.9:3000/search");
+        searchFragment = new SearchFragment();
         upLoadFragment = new MainFragment("http://192.168.35.9:3000/upload");
         chatFragment = new MainFragment("http://192.168.35.9:3000/chat");
         myPageFragment = new MainFragment("http://192.168.35.9:3000/mypage");

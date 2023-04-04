@@ -9,49 +9,33 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.Adapter.CategoryAdapter;
+import com.Adapter.RecordAdapter;
+import com.Decoration.SearchRecordItemDecoration;
+
+import java.util.ArrayList;
 
 public class SearchFragment extends Fragment {
-    private WebView webView;
-    private String url;
-    public SearchFragment(String url){
-        this.url=url;
-    }
+    private RecyclerView recordView;
+    private ArrayList<String> recordList;
+    private RecordAdapter recordAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_fragment, container, false);
-        webView = view.findViewById(R.id.search_webView);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        //webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        webSettings.setAllowFileAccessFromFileURLs(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setSupportMultipleWindows(true);
-
-        webView.setWebViewClient(new WebViewClient());
-        webView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if(keyEvent.getAction()!=KeyEvent.ACTION_DOWN)
-                    return true;
-                if(i == KeyEvent.KEYCODE_BACK){
-                    if (webView.canGoBack()) webView.goBack();
-                    else getActivity().finish();
-                }
-                return false;
-            }
-        });
-        Log.d("위치",url);
-        webView.loadUrl(url);
-
-        // Inflate the layout for this fragment
+        recordView = view.findViewById(R.id.recordView);
+        recordList = new ArrayList<String>();
+        recordList.add("iPhone 14 pro");
+        recordList.add("Macbook");
+        recordList.add("PS5");
+        recordAdapter = new RecordAdapter(getActivity().getApplicationContext(),recordList);
+        recordView.setAdapter(recordAdapter);
+        recordView.addItemDecoration(new SearchRecordItemDecoration(0));
         return view;
-    }
-    public void onBackPressed() {
-        if (webView.canGoBack()) webView.goBack();
-        else getActivity().finish();
     }
 }

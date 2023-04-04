@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.Adapter.BannerPagerAdapter;
+import com.Adapter.CategoryAdapter;
 import com.Adapter.ProductAdapter;
 import com.Model.BannerModel;
+import com.Model.CategoryModel;
 import com.Model.ProductModel;
 
 import java.util.ArrayList;
@@ -27,7 +29,9 @@ public class HomeFragment extends Fragment {
     private BannerPagerAdapter bannerAdapter;
     private ArrayList<BannerModel> bannerViews;
     private CircleIndicator3 bannerIndicator;
-    private RecyclerView categoryView;
+    private RecyclerView categoryRecycler;
+    private ArrayList<CategoryModel> categoryList;
+    private CategoryAdapter categoryAdapter;
     private TextView recommendText;
     private GridView recommendGrid;
     private ArrayList<ProductModel> recommendProductList;
@@ -51,8 +55,17 @@ public class HomeFragment extends Fragment {
         bannerViews.add(new BannerModel("https://fastly.picsum.photos/id/42/1280/774.jpg?hmac=wH8dpUlYlOTcgcrV31I3iyIYpNFQoMcfo0HIwPZlCGA"));
         bannerAdapter = new BannerPagerAdapter(getActivity().getApplicationContext(),bannerViews);
         bannerIndicator = view.findViewById(R.id.bannerIndicator);
-        //categoryView = view.findViewById(R.id.categoryList);
 
+        categoryRecycler = view.findViewById(R.id.categoryList);
+        categoryList = new ArrayList<CategoryModel>();
+        categoryList.add(new CategoryModel("Apple",R.drawable.apple));
+        categoryList.add(new CategoryModel("カメラ",R.drawable.apple));
+        categoryList.add(new CategoryModel("服",R.drawable.apple));
+        categoryList.add(new CategoryModel("靴",R.drawable.apple));
+        categoryList.add(new CategoryModel("スピーカ",R.drawable.apple));
+        categoryList.add(new CategoryModel("パソコン",R.drawable.apple));
+        categoryAdapter = new CategoryAdapter(getActivity().getApplicationContext(),categoryList);
+        categoryRecycler.setAdapter(categoryAdapter);
 
         recommendText = view.findViewById(R.id.recommendText);
         recommendGrid = view.findViewById(R.id.recommendView);

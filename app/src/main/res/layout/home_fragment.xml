@@ -23,12 +23,14 @@
         app:ci_width="7dp"
         app:ci_margin="5dp">
     </me.relex.circleindicator.CircleIndicator3>
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoryList"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-    </androidx.recyclerview.widget.RecyclerView>-->
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_margin="10dp">
+    </androidx.recyclerview.widget.RecyclerView>
     <TextView
         android:id="@+id/recommendText"
         android:layout_width="wrap_content"
