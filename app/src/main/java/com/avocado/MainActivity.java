@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchFragment searchFragment;
     private MainFragment upLoadFragment;
     private MainFragment chatFragment;
-    private MainFragment myPageFragment;
+    private MypageFragment myPageFragment;
     private ViewPagerAdapter pagerAdapter;
     private BottomNavigationView bottomBar;
     private TabLayout tabLayout;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         searchFragment = new SearchFragment();
         upLoadFragment = new MainFragment("http://192.168.35.9:3000/upload");
         chatFragment = new MainFragment("http://192.168.35.9:3000/chat");
-        myPageFragment = new MainFragment("http://192.168.35.9:3000/mypage");
+        myPageFragment = new MypageFragment();
         pagerAdapter.addFragment(homeFragment);
         pagerAdapter.addFragment(searchFragment);
         pagerAdapter.addFragment(upLoadFragment);
